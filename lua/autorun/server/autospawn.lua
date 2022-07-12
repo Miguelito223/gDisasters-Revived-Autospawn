@@ -88,7 +88,8 @@ local function Disasterspawn()
 		"gd_d6_landslide",
 		"gd_d2_waterspout",
 		"gd_d0_miniflood",
-		"gd_d7_lavaflood"
+		"gd_d7_lavaflood",
+		"gd_d8_combineinv"
 	}
 
 
@@ -180,7 +181,11 @@ local function Weatherspawn()
 		"gd_w4_strong_warmfront",
 		"gd_w4_severethunderstorm",
 		"gd_w3_drythunderstorm",
-		"gd_w2_stationaryfront"
+		"gd_w2_stationaryfront",
+		"gd_w2_haboob",
+		"gd_w5_pyrocum",
+		"gd_w6_neptune",
+		"gd_w6_redspot"
 	}
 
 
