@@ -334,7 +334,8 @@ local function WeatherDisasterspawn()
 		"gd_d6_landslide",
 		"gd_d2_waterspout",
 		"gd_d0_miniflood",
-		"gd_d7_lavaflood"
+		"gd_d7_lavaflood",
+		"gd_d8_combineinv"
 	}
 
 
