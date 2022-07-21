@@ -97,16 +97,11 @@ local function Disasterspawn()
 	if GetConVar("gdisasters_autospawn_disasters"):GetInt() == 0 then return end
 	
 	if GetConVar("gdisasters_autospawn_disasters"):GetInt() == 1 then
-		dis = ents.Create( disasters[math.random( 1, #disasters )] .. "" )	
-		if S37K_mapbounds == nil or table.IsEmpty(S37K_mapbounds) then
-			dis:SetPos(Vector(math.random(-10000,10000),math.random(-10000,10000),0))
-		else
-			local stormtable = S37K_mapbounds[1]
-			dis:SetPos( Vector(math.random(stormtable.negativeX,stormtable.positiveX),math.random(stormtable.negativeY,stormtable.positiveY), 0) )
-		end
+		dis = ents.Create( disasters[math.random( 1, #disasters )] .. "" )
+		dis:SetPos(Vector(math.random(-10000,10000),math.random(-10000,10000), getMapCenterFloorPos().z))
 		dis:Spawn()
 		dis:Activate()
-		print("the disaster that is happening now: " .. tostring(dis))
+		print("the disaster that is happening now: " .. tostring(dis) .. " Pos: " .. tostring(dis:GetPos()) )
 		timer.Simple(GetConVar( "gdisasters_autospawn_timer" ):GetInt(), function()
 			if dis:IsValid() then dis:Remove() end
 		end)
@@ -193,16 +188,11 @@ local function Weatherspawn()
 	if GetConVar("gdisasters_autospawn_weather"):GetInt() == 0 then return end
 	
 	if GetConVar("gdisasters_autospawn_weather"):GetInt() == 1 then
-		wea = ents.Create( weather[math.random( 1, #weather )] .. "" )	
-		if S37K_mapbounds == nil or table.IsEmpty(S37K_mapbounds) then
-			wea:SetPos(Vector(math.random(-10000,10000),math.random(-10000,10000),0))
-		else
-			local stormtable = S37K_mapbounds[1]
-			wea:SetPos( Vector(math.random(stormtable.negativeX,stormtable.positiveX),math.random(stormtable.negativeY,stormtable.positiveY), 0) )
-		end
+		wea = ents.Create( weather[math.random( 1, #weather )] .. "" )
+		wea:SetPos(Vector(math.random(-10000,10000),math.random(-10000,10000), getMapCenterFloorPos().z))
 		wea:Spawn()
 		wea:Activate()
-		print("the weather that is happening now: " .. tostring(wea))
+		print("the weather that is happening now: " .. tostring(wea) .. " Pos: " .. tostring(wea:GetPos()) )
 		timer.Simple(GetConVar( "gdisasters_autospawn_timer" ):GetInt(), function()
 			if wea:IsValid() then wea:Remove() end
 		end)
@@ -347,16 +337,11 @@ local function WeatherDisasterspawn()
 	if GetConVar("gdisasters_autospawn_weatherdisaster"):GetInt() == 0 then return end
 	
 	if GetConVar("gdisasters_autospawn_weatherdisaster"):GetInt() == 1 then
-		weadis = ents.Create( weadisas[math.random( 1, #weadisas)] .. "" )	
-		if S37K_mapbounds == nil or table.IsEmpty(S37K_mapbounds) then
-			weadis:SetPos(Vector(math.random(-10000,10000),math.random(-10000,10000),0))
-		else
-			local stormtable = S37K_mapbounds[1]
-			weadis:SetPos( Vector(math.random(stormtable.negativeX,stormtable.positiveX),math.random(stormtable.negativeY,stormtable.positiveY),0) )
-		end
+		weadis = ents.Create( weadisas[math.random( 1, #weadisas)] .. "" )
+		weadis:SetPos(Vector(math.random(-10000,10000),math.random(-10000,10000), getMapCenterFloorPos().z))
 		weadis:Spawn()
 		weadis:Activate()
-		print("the weather or disaster that is happening now: " .. tostring(weadis))
+		print("the weather or disaster that is happening now: " .. tostring(weadis) .. " Pos: " .. tostring(weadis:GetPos()))
 		timer.Simple(GetConVar( "gdisasters_autospawn_timer" ):GetInt(), function()
 			if weadis:IsValid() then weadis:Remove() end
 		end)
